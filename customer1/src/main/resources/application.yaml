@@ -1,0 +1,19 @@
+server:
+  port: 8001 #端口
+spring:
+  application:
+    name: customer1 #服务名称
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8081/eureka/ #注册中心地址不能通过变量指定
+management:
+  port: 8082
+  security:
+    enable: flase

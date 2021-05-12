@@ -1,0 +1,14 @@
+server:
+  port: 8004
+spring:
+  application:
+    name: configServer #服务名称
+  cloud:
+    server:
+      native:
+        search-locations: classpath:/shared
+#        用这个命令可以单纯使用本地仓库。
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8081/eureka/

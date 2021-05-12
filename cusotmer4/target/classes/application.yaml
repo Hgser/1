@@ -1,0 +1,29 @@
+server:
+  port: 8004 #端口
+spring:
+  application:
+    name: customer2 #服务名称
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+customer4:
+  rabbitmq:
+    exchange:
+      - name: icao.sale_order
+          type: topic
+          queues:
+            - name: test
+              routingKey: 'jf.*'
+            - name: hello
+              routingKey: JR-ORDER-ROUTING
+#就是一个配置注入，做完了就直接读了。
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8081/eureka/ #注册中心地址
+management:
+  port: 8083
+  security:
+    enable: flase
